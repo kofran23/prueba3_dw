@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado Busqueda</title>
+</head>
+<body>
+    Precio consultado:{{precio_recibido}} <br>
+    {% if casas %}
+    <p>Casas encontradas:{{casas|length}} casas</p>
+    <br>
+    <table border="2">
+    {% for cas in casas %}
+    <tr>
+        <td>{{cas.ciudad}}</td>
+        <td>{{cas.medida}}</td>
+        <td>{{cas.categoria}}</td>
+        <td>{{cas.precio}}</td>
+    </tr>
+    {% endfor %}
+    {% else %}
+    <p>No existe casa con ese precio</p>
+    {% endif %}
+</table> 
+</body>
+</html>
